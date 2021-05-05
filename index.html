@@ -1,49 +1,45 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Yard Designer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="dirt.jpg" rel="prefetch" />
+    <link href="grass.jpg" rel="prefetch" />
+    <link href="pavers.jpg" rel="prefetch" />
+    <script src="script.js" defer></script>
+  </head>
 
-<head>
-	<title>Yard Designer</title>
-	<meta name="viewport" content="width=device-width, initial-scale=0.5">
-	<link href="style.css" rel="stylesheet">
-	<link href="dirt.jpg" rel="prefetch">
-	<link href="grass.jpg" rel="prefetch">
-	<link href="pavers.jpg" rel="prefetch">
-	<script src="script.js" defer>
+  <body>
+    <h1>Yard Designer</h1>
 
-	</script>
-</head>
+    <div id="sidePanel">
+      <p class="label">Size (1 foot = 10 pixels)</p>
 
-<body>
-	<h1>Yard Designer</h1>
+      <div class="row">
+        <label for="widthSlider">Width</label>
+        <input type="range" min="20" max="40" value="20" id="widthSlider" />
+      </div>
 
-	<div id="sidePanel">
-		<p class="label">Size (1 foot = 10 pixels)</p>
+      <div class="row">
+        <label for="heightSlider">Height</label>
+        <input type="range" min="20" max="40" value="20" id="heightSlider" />
+      </div>
 
-		<div class="row">
-			<label for="widthSlider">Width</label>
-      <input type="range" min="20" max="40" value="20" id="widthSlider">
+      <p id="sizeParagraph">20 feet &times; 20 feet</p>
+
+      <p class="label">Landscape</p>
+      <button id="dirtButton">Dirt $1/sqft</button>
+      <button id="grassButton">Grass $2/sqft</button>
+      <button id="paversButton">Pavers $3/sqft</button>
+      <p id="landscapeParagraph">Selected landscape: none</p>
+
+      <p class="label">Cost</p>
+      <p id="areaParagraph">Area: 400 square feet</p>
+      <p id="sqftCostParagraph">Cost per square foot: $0</p>
+      <p id="totalCostParagraph">Total cost: $0</p>
     </div>
 
-    <div class="row">
-      <label for="heightSlider">Height</label>
-      <input type="range" min="20" max="40" value="20" id="heightSlider">
-    </div>
-
-    <p id="sizeParagraph">20 feet &times; 20 feet</p>
-
-    <p class="label">Landscape</p>
-    <button id="dirtButton">Dirt $1/sqft</button>
-    <button id="grassButton">Grass $2/sqft</button>
-    <button id="paversButton">Pavers $3/sqft</button>
-    <p id="landscapeParagraph">Selected landscape: none</p>
-
-    <p class="label">Cost</p>
-    <p id="areaParagraph">Area: 400 square feet</p>
-    <p id="sqftCostParagraph">Cost per square foot: $0</p>
-    <p id="totalCostParagraph">Total cost: $0</p>
-  </div>
-
-	<div id="yard"></div>
-</body>
-
+    <div id="yard"></div>
+  </body>
 </html>
