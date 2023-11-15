@@ -1,7 +1,7 @@
 let yard = document.getElementById(`yard`)
 
+let lengthSlider = document.getElementById(`lengthSlider`)
 let widthSlider = document.getElementById(`widthSlider`)
-let heightSlider = document.getElementById(`heightSlider`)
 let sizeParagraph = document.getElementById(`sizeParagraph`)
 
 let dirtButton = document.getElementById(`dirtButton`)
@@ -15,8 +15,8 @@ let totalCostParagraph = document.getElementById(`totalCostParagraph`)
 
 let selectedCost = 0
 
+lengthSlider.addEventListener(`input`, changeSize)
 widthSlider.addEventListener(`input`, changeSize)
-heightSlider.addEventListener(`input`, changeSize)
 
 dirtButton.addEventListener(`click`, selectDirt)
 grassButton.addEventListener(`click`, selectGrass)
@@ -24,8 +24,8 @@ paversButton.addEventListener(`click`, selectPavers)
 
 function changeSize() {
   yard.style.width = `${widthSlider.value * 10}px`
-  yard.style.height = `${heightSlider.value * 10}px`
-  sizeParagraph.innerHTML = `${widthSlider.value} feet &times; ${heightSlider.value} feet`
+  yard.style.height = `${lengthSlider.value * 10}px`
+  sizeParagraph.innerHTML = `${lengthSlider.value} feet &times; ${widthSlider.value} feet`
   updateCost()
 }
 
@@ -51,7 +51,7 @@ function selectPavers() {
 }
 
 function updateCost() {
-  let area = widthSlider.value * heightSlider.value
+  let area = lengthSlider.value * widthSlider.value
   areaParagraph.innerHTML = `Area: ${area} square feet`
 
   sqftCostParagraph.innerHTML = `Cost per square foot: $${selectedCost}`
